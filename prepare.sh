@@ -25,6 +25,9 @@ update() {
 	popd &> /dev/null
 }
 
+[[ `which git` ]] || fail "Cannot find git"
+[[ `which javac` ]] || fail "Cannot find javac. Make sure you have JDK installed"
+
 if [[ "$1" == "" ]]; then
 	if [[ -e ../snapi ]]; then
 		ROOT=`pwd`/..
