@@ -46,9 +46,9 @@ update "android.main"
 update "android.chat"
 
 cd ${ROOT}/networker
-./gradlew clean
-./gradlew eclipse uploadArchives
-cp build/libs/networker-*.jar ../android.main/libs
+./gradlew clean  || exit -1
+./gradlew eclipse uploadArchives || exit -1
+cp build/libs/networker-*.jar ../android.main/libs  || exit -1
 
 cd ${ROOT}/snapi
-./gradlew
+./gradlew  || exit -1
