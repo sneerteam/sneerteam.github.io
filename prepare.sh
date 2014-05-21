@@ -35,8 +35,6 @@ else
 	ROOT=$1
 fi
 
-ROOT=`realpath ${ROOT}`
-
 log "Sneer projects root is ${ROOT}"
 
 [[ -e ${ROOT} ]] || mkdir -p ${ROOT}
