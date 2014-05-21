@@ -3,8 +3,6 @@
 log()  { printf "%b\n" "$*"; }
 fail() { log "\nERROR: $*\n" ; exit 1 ; }
 
-abspath() { echo "$(cd "$(dirname "$1")" && pwd)/$(basename "$1")"; }
-
 clone() { 
 	git clone https://github.com/sneerteam/$1.git || fail "Failing cloning $1"
 }
@@ -27,6 +25,7 @@ update() {
 
 [[ `which git` ]] || fail "Cannot find git"
 [[ `which javac` ]] || fail "Cannot find javac. Make sure you have JDK installed"
+[[ "$JAVA_HOME" == "" ]] && fail "Your JAVA_HOME environment variable is not set"
 
 if [[ "$1" == "" ]]; then
 	if [[ -e ../snapi ]]; then
