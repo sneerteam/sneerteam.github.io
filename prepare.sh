@@ -25,7 +25,7 @@ update() {
 
 [[ `which git` ]] || fail "Cannot find git"
 [[ `which javac` ]] || fail "Cannot find javac. Make sure you have JDK installed"
-[[ "$JAVA_HOME" == "" ]] && fail "Your JAVA_HOME environment variable is not set"
+# [[ "$JAVA_HOME" == "" ]] && fail "Your JAVA_HOME environment variable is not set"
 
 if [[ "$1" == "" ]]; then
 	if [[ -e ../snapi ]]; then
