@@ -13,6 +13,8 @@ pull() {
 }
 
 update() {
+	echo
+	echo ----------------- $1
 	if [[ -e ${ROOT}/$1 ]]; then
 		pushd ${ROOT}/$1 &> /dev/null
 		pull $1
