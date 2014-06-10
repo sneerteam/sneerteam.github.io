@@ -4,7 +4,7 @@ log()  { printf "%b\n" "$*"; }
 fail() { log "\nERROR: $*\n" ; exit 1 ; }
 
 clone() { 
-	git clone https://github.com/sneerteam/$1.git || fail "Failing cloning $1"
+	git clone git@github.com:sneerteam/$1.git || fail "Failing cloning $1"
 }
 
 pull() {
