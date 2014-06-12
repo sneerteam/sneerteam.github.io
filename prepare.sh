@@ -53,6 +53,7 @@ echo ------------ networker gradle
 cd ${ROOT}/networker
 ./gradlew clean  || exit -1
 ./gradlew eclipse uploadArchives || exit -1
+rm -r ../android.main/libs/networker-*.jar  || exit -1
 cp build/libs/networker-*.jar ../android.main/libs  || exit -1
 
 echo ------------ snapi gradle 
